@@ -6,6 +6,7 @@ Adapted from [repository](https://github.com/utkarshdrh/Static-Rod-Model-Codes-a
 
 # Instructions for running code
 Execute /run_rodModels.py
+
 User will be prompted for running test case. Test case runs sample simulation with predefined rod properties and simulation settings.
 
 If test case is not run, user will be prompted to enter loading conditions and rod properties. Loads are defined as shown in figure:
