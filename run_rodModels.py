@@ -184,10 +184,10 @@ def user_inputs(test_case=False):
         return [[1.0, 21, 1.0, 1.0], [0.0,0.0,10.0,0.0,0.0],True, True]
 
     moment = get_input_float("Moment[Nm] at free end")
-    force1 = get_input_float("Force[N] 'f1' at free end")
-    force3 = get_input_float("Force[N] 'f3' at free end")
-    d_force1 = get_input_float("Distributed force[N/m] along 'f1'")
-    d_force3 = get_input_float("Distributed force[N/m] along 'f3'")
+    force1 = get_input_float("Force[N] 'P' at free end")
+    force3 = get_input_float("Force[N] 'Nf' at free end")
+    d_force1 = get_input_float("Distributed force[N/m] along 'F1'")
+    d_force3 = get_input_float("Distributed force[N/m] along 'Nf'")
 
     Elasticity = get_input_float("Elasticity[N/m^2]")
     if Elasticity == 0:
@@ -257,5 +257,6 @@ if __name__ == '__main__':
         rod2.plot_self()
 
     compare_models(rod,rod2)
+
 
 
