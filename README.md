@@ -14,8 +14,8 @@ If test case is not run, user will be prompted to enter loading conditions and r
   <img width="826" height="257" alt="Rod" src="https://github.com/user-attachments/assets/156b4b56-95ae-48e5-b911-a4866d01c65a" />
 </p>
 
-Where P & Nf are applied forces on the free end, M is the applied moment at the free end. F1 & F3 are the distributed loads.
-E is the Young's modulus of the rod, I is the moment of inertia of its cross section and L is the initial lenght of the rod.
+Where P & Nf are concentrated applied forces on the free end, M is the concentrated applied moment at the free end. F1 & F3 are the distributed loads.
+E is the Young's modulus of the rod, I is the moment of inertia of its cross section and L is the initial length of the rod.
 Inputting invalid values(<=0) for E, I & L will resort to using the default in-built values.
 
 User will be prompted to draw the shear arrows which will plot the shear loads on the deflection curves.
