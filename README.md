@@ -12,7 +12,7 @@ User will be prompted for running test case. Test case runs sample simulation wi
 If test case is not run, user will be prompted to enter loading conditions and rod properties. Loads are defined as shown in figure:
 
 <p align="center">
-  <img width="826" height="257" alt="Rod" src="https://github.com/user-attachments/assets/156b4b56-95ae-48e5-b911-a4866d01c65a" />
+  <img width="826" height="257" alt="Rod" src="/images/Rod.png" />
 </p>
 
 Where P & Nf are concentrated applied forces on the free end, M is the concentrated applied moment at the free end. F1 & F3 are the distributed loads.
