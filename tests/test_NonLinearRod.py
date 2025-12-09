@@ -6,7 +6,7 @@ import numpy as np
 class test_NonLinearRod(unittest.TestCase):
     def test_NonLinearRod1(self):
         """check whether the model works for a known case"""
-        acc = 3                                                                     # order of accuracy of checks
+        acc = 3                                                                     # order of accuracy of checks; accuracy reduced as solve_ivp is numerically unstable
         test_rod = Rod(E=1.0, L=1.0, I=1.0)                                         # properties of the test rod
         F1, F3, P, Q, N = 1.0, 0.0, 1.0, 1.0, 1.0                                   # loading condition of test case
         y_L, V_0, V_L, M_0, M_L = 0.389933, -0.9518812, 1, 0.97630532, 1            # expected boundary values of test case
@@ -22,7 +22,7 @@ class test_NonLinearRod(unittest.TestCase):
 
     def test_NonLinearRod2(self):
         """check whether the model works for another known case"""
-        acc=3                                                                       # order of accuracy of checks
+        acc=3                                                                       # order of accuracy of checks; accuracy reduced as solve_ivp is numerically unstable
         test_rod = Rod(E=15.24, L=1.54, I=0.76)                                     # properties of the test rod
         F1, F3, P, Q, N = 1.51, 0.0, 5.2, 23.5, 3.11                                # loading condition of test case
         y_L, V_0, V_L, M_0, M_L = 0.982325, -5.097810, 5.2, 27.036914, 23.5         # expected boundary values of test case
