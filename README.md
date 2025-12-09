@@ -2,7 +2,7 @@
 A rod model simulating a 2D cantilever beam under user-defined loading conditions and compares the outcomes for a linear and nonlinear beam deflection model.
 
 Python model of the publication: "AN INTERACTIVE GUI FOR EXPLORING CANTILEVER BENDING THROUGH NONLINEAR ROD THEORY", by Muhammad Hassaan Ahmed, Utkarsh Srivastava, Ranjan Das and Sachin Goyal, 2025, ASME IDETC.CIE2025.
-Adapted from [repository](https://github.com/utkarshdrh/Static-Rod-Model-Codes-and-SImulink-Model) for Python.
+Adapted from [the MATLAB repository](https://github.com/utkarshdrh/Static-Rod-Model-Codes-and-SImulink-Model) for Python.
 
 # Instructions for running code
 Execute /run_rodModels.py
