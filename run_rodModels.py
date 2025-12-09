@@ -67,18 +67,20 @@ class Rod: #2D cylindrical rod
         plt.title(self.model)
         max_def = np.amax(np.abs(self.y))
         plt.plot(self.x.T, self.y.T)
-        if self.plot_arrows:
+        if self.plot_arrows: # plot shear arrows
             plt.scatter(self.x, self.y)
-            if self.model=="Linear":
+            if self.model=="Linear": # linear model only has vertical shearing arrows
                 plt.quiver(self.x, self.y, 0*self.n[:, 0], self.f1/(np.max(np.abs(self.f1))+self.eps), scale=20, width=0.0045, color='k')
             else:
                 plt.quiver(self.x, self.y, self.n[:, 0]*self.f1/(np.max(np.abs(self.f1))+self.eps), self.n[:, 1]*self.f1/(np.max(np.abs(self.f1))+self.eps), scale=20, width=0.0045, color='k')
 
+        # plot deflections
         plt.tick_params('x', labelbottom=True)
         plt.ylabel('Y [m]')
         plt.ylim(max_def * -2, max_def * 2)
         plt.xlabel('X [m]')
 
+        # plot shears
         ax2 = plt.subplot(312)
         ax2.grid()
         plt.plot(self.s.T, self.f1.T)
@@ -86,6 +88,7 @@ class Rod: #2D cylindrical rod
         plt.ylabel('Internal Shear [N]')
         plt.xlabel('Rod Length [m]')
 
+        # plot moments
         ax3 = plt.subplot(313)
         ax3.grid()
         plt.plot(self.s.T, self.q2.T)
@@ -137,9 +140,9 @@ def compare_models(*rods):
     for c_rod in rods:
         legend.append(c_rod.model)
         plt.figure(0)
-        plt.plot(c_rod.x, c_rod.y,label=c_rod.model,color=colors[i],linestyle=line_styles[i])
-        if c_rod.plot_arrows:
-            if c_rod.model == "Linear":
+        plt.plot(c_rod.x, c_rod.y,label=c_rod.model,color=colors[i],linestyle=line_styles[i]) # plot deflections
+        if c_rod.plot_arrows: # plot shear arrows
+            if c_rod.model == "Linear": # linear model only has vertical shearing arrows
                 plt.quiver(c_rod.x, c_rod.y, 0, 1*(c_rod.f1/(np.max(np.abs(c_rod.f1))+c_rod.eps)),
                            scale=21, width=0.0035,alpha=0.75,label=None,color=colors[i])
             else:
@@ -147,10 +150,10 @@ def compare_models(*rods):
                        (c_rod.f1/(np.max(np.abs(c_rod.f1))+c_rod.eps)), scale=21, width=0.0035,alpha=0.75,label=None,color=colors[i])
         plt.legend()
         plt.figure(1)
-        plt.plot(c_rod.s, c_rod.f1,label=c_rod.model,color=colors[i],linestyle=line_styles[i])
+        plt.plot(c_rod.s, c_rod.f1,label=c_rod.model,color=colors[i],linestyle=line_styles[i]) # plot shears
         plt.legend()
         plt.figure(2)
-        plt.plot(c_rod.s, c_rod.q2,label=c_rod.model,color=colors[i],linestyle=line_styles[i])
+        plt.plot(c_rod.s, c_rod.q2,label=c_rod.model,color=colors[i],linestyle=line_styles[i]) # plot moments
         plt.legend()
         i+=1
 
@@ -226,7 +229,7 @@ def user_inputs(test_case=False):
     # analytically calculate the max deflection at free end for the linear rod model
     y_max = (d_force1 * Length ** 4 / 8 + force1 * Length ** 3 / 3 + moment * Length ** 2 / 2) / (Elasticity * Inertia)
 
-    # determine the number of segments from max deflection to an upper limit of 101
+    # determine the number of segments from max deflection to an upper limit of 1000
     max_segments = 1000
     min_segments = 21
     exp_coeff = 0.157
@@ -257,6 +260,5 @@ if __name__ == '__main__':
         rod2.plot_self()
 
     compare_models(rod,rod2)
-
 
 
