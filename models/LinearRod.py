@@ -21,6 +21,7 @@ def linear_model(rod_i):
     rod_i.t = np.array([np.cos(rod_i.phi), np.sin(rod_i.phi)]).T
     rod_i.n = np.array([-np.sin(rod_i.phi), np.cos(rod_i.phi)]).T
 
+    # for future use
     # alternative method to compute deflections and rod positions; constrains the total length of the rod!
     # rod_i.phi[1:] = cumulative_trapezoid(rod_i.k2, rod_i.s)
     # rod_i.x[1:] = cumulative_trapezoid(np.cos(rod_i.phi), rod_i.s)
